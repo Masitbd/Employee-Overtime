@@ -1,0 +1,2 @@
+Run the specific file
+rspec spec/models/user_spec.rb:13
