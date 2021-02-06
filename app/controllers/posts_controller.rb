@@ -8,13 +8,25 @@ class PostsController < ApplicationController
     end
 
     def create 
-        @post = Post.new(params.require(:post).permit(:date, :rational))
-        @post.save
-        redirect_to @post
+        @post = Post.new(post_params)
+
+      if  @post.save
+        redirect_to @post, notice: "Your post was created successfully"
+      else
+          render :new
+      end
     end
 
     def show 
         @post = Post.find(params[:id])
     end
+
+    private
+
+    def post_params
+        params.require(:post).permit(:date, :rational)
+    end
+       
+
 end
 
