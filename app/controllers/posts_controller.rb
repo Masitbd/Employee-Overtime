@@ -20,7 +20,7 @@ class PostsController < ApplicationController
     end
 
     def show 
-        @post = Post.find(params[:id])
+       
     end
 
     private
@@ -30,7 +30,7 @@ class PostsController < ApplicationController
     end
 
     def set_post
-
+        @post = Post.find(params[:id])
     end
        
 
