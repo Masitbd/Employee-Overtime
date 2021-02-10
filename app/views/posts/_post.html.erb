@@ -7,9 +7,12 @@
                     <%= post.date %>
                     </td>
                     <td>
-                    <%= post.user.last_name %>
+                    <%= post.user.full_name %>
                     </td>
                     <td>
                     <%= truncate(post.rational) %>
+                    </td>
+                    <td>
+                    <%= link_to 'Edit', edit_post_path(post), id: "edit_#{post.id}" %>
                     </td>
                 </tr>
